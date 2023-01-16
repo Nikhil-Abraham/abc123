@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const { get_data, get_average, check_data } = require('../controllers/data')
+const { get_data, return_average, check_data } = require('../controllers/data')
 
 const router = express.Router()
 
@@ -12,7 +12,7 @@ router.use(bodyParser.json());
 
 router.get('/', get_data)
 
-router.get('/average', get_average)
+router.get('/average', return_average)
 
 router.post('/check-data', check_data)
 

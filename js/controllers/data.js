@@ -58,6 +58,12 @@ async function get_average() {
 
 }
 
+
+async function return_average(req, res) {
+    const average = await get_average();
+    res.status(200).send(average);
+}
+
 async function check_data(req, res) {
     // You can take any number of inoputs from here
     const { email, pregnancies, glucose, bloodPressure, skinThickness, insulin, BMI, age } = req.body
@@ -106,6 +112,6 @@ async function check_data(req, res) {
 
 module.exports = {
     get_data,
-    get_average,
+    return_average,
     check_data
 };
